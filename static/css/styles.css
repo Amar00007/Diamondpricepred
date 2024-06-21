@@ -1,0 +1,180 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('/static/dope-trippy-xadztqcz48ssrhcu.jpg'); /* Replace with a real URL */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: white;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+
+body.scrolled footer {
+    display: block;
+}
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff8c00;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px; /* Adjust margin as needed */
+    text-align: center;
+    width: 80%;
+    max-width: 800px;
+    flex: 1;
+}
+
+.content {
+    max-width: 600px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+button, input[type="submit"] {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    background-color: #ff8c00;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #ffa500;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    z-index: 1000;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    flex: 1; /* Distribute space evenly */
+}
+
+.form-group input, .form-group select {
+    flex: 3; /* Take up 3/4 of the space */
+    padding: 10px;
+    margin: 0 10px; /* Adjust spacing between input fields */
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-group select {
+    margin: 0 10px; /* Adjust spacing for select boxes */
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 50px;
+        left: 0;
+        padding: 10px 0;
+        transition: transform 0.3s ease; /* Smooth slide animation */
+        transform: translateY(-100%); /* Start offscreen */
+        z-index: 999; /* Ensure it's above other content */
+    }
+
+    nav ul.show {
+        display: flex;
+        transform: translateY(0); /* Slide down when shown */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 2em;
+        cursor: pointer;
+    }
+}

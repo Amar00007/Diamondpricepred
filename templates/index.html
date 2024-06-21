@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diamond Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <!-- Font Awesome CSS (assuming you are using it for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-XmUQoZlLZ1s04tW5zXlcZ3yygF0bY5A7hjPSmFMZaWlyib+xiHPEJeYcy2BK52/nn4TVlP4PpAm9SyT4dZ2Trg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+ <!-- Font Awesome -->
+ <link rel="stylesheet"
+ href="/static/css/5.15.4.css"
+ integrity="sha512-kTYu2UpzDYm6x1eYzR7VUXOWJFPw9CrMIzoaPrs61NgaDaiUWyA68CtCzYYiWssPQQGU7oqTRkdXsKjQRY87zQ=="
+ crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet"
+ href="/static/css/6.3.0 fontawesome.css">
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+<body>
+    <header>
+        <nav>
+            <div class="menu-icon" id="menu-icon">
+                &#9776;
+            </div>
+            <ul id="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="container">
+        <div class="content">
+            <h1>Welcome to Diamond Price Prediction</h1>
+            <p>Diamonds, renowned for their unparalleled brilliance and rarity, have captivated humanity for centuries. These precious gemstones are formed under extreme pressure and heat deep within the Earth’s mantle, emerging through volcanic eruptions. Diamonds are valued based on the "Four Cs": carat, cut, color, and clarity. Each factor significantly influences a diamond's aesthetic appeal and market price. The allure of diamonds is multifaceted, extending beyond mere adornment. They symbolize wealth, power, and eternal love, often featured in engagement rings and high-end jewelry.
+
+                The impact of diamonds spans economic, social, and environmental spheres. Economically, the diamond industry contributes significantly to global markets, supporting millions of jobs from mining to retail. Major diamond-producing countries include Russia, Botswana, Canada, and Australia. Socially, diamonds play a crucial role in cultural and societal traditions, marking significant life events and symbolizing status.
+                
+                However, the diamond industry also faces challenges. Ethical concerns arise from "blood diamonds" or conflict diamonds, which finance armed conflicts and human rights abuses. Environmental impacts from diamond mining include habitat destruction, water pollution, and significant carbon footprints. In response, initiatives like the Kimberley Process aim to certify conflict-free diamonds, and the rise of lab-grown diamonds offers a sustainable alternative. As the industry evolves, balancing economic benefits with ethical and environmental responsibilities remains crucial.</p>
+        </div>
+    </section>
+
+    <section id="about" class="container">
+        <div class="content">
+            <h1>About Diamonds</h1>
+            <h3><u>Price of Diamonds and Market Fraud</u></h3>
+            <p>
+                The price of diamonds is influenced by various factors, including the "Four Cs": carat, cut, color, and clarity. These elements collectively determine a diamond's value, with higher grades commanding premium prices. However, the diamond market is susceptible to fraudulent practices that manipulate prices. Unscrupulous dealers may misrepresent the quality of diamonds, inflating prices for subpar stones. This deception can occur through tampered certificates, artificial enhancements, or outright forgery.
+            </p>
+        </div>
+    </section>
+
+    <section id="services" class="container">
+        <div class="content">
+            <h1>Our Services</h1>
+            <p>
+                Our application aims to resolve your problems by providing accurate and reliable diamond price predictions using advanced algorithms and data analysis techniques. Simply click the button below to get started.
+            </p>
+            <!-- <button id="predictButton">Predict</button> -->
+
+            <form action="/predict" method="get">
+                <button type="submit">Predict</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contacts Section -->
+    <section id="contact" class="container">
+        <div class="content">
+            <h1>Contact Us</h1>
+            <p>You can reach out to us :</p>
+        
+            <div class="row">
+              <div class="col-md-6">
+                <p><strong>Email:</strong> amarkumarpathak2004@gmail.com</p>
+                <p><strong>Phone:</strong> +91 977417XXX</p>
+              </div>
+              <div class="col-md-6">
+                <p><strong>Address:</strong><br>
+                  KL Boys Hostel,<br>
+                  Gundimeda, Vijayawada,<br>
+                  Andhra Pradesh, India, <br>
+                  Postal Code - 522303
+                </p>
+              </div>
+            
+        
+
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Diamond Price Prediction. All rights reserved.</p>
+    </footer>
+
+    <!-- Your Custom JavaScript -->
+    
+</body>
+</html>

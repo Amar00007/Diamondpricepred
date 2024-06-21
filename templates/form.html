@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diamond Price Prediction</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .details-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 2rem;
+            width: 100%;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .row .box,
+        .middle-box {
+            
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 48%;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            text-align: center;
+            margin-right:20px
+        }
+
+        .middle-box {
+            margin-top: 1rem;
+        }
+
+        .details-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button onclick="window.location.href='{{ url_for('home_page') }}'" class="home-button">Go Back to Home Page</button>
+    </header>
+
+    <section class="container">
+        <div class="content">
+            <h1>Diamond Price Prediction Form</h1>
+            <form action="{{ url_for('predict_datapoint') }}" method="POST">
+                <div class="form-group">
+                    <label for="carat">Carat:</label>
+                    <input type="text" id="carat" name="carat" pattern="-?\d+(\.\d+)?" placeholder="Enter carat value (float)" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="depth">Depth:</label>
+                    <input type="text" id="depth" name="depth" pattern="-?\d+(\.\d+)?" placeholder="Enter depth value (float)"required>
+                </div>
+
+                <div class="form-group">
+                    <label for="table">Table:</label>
+                    <input type="text" id="table" name="table" pattern="-?\d+(\.\d+)?" placeholder="Enter table value (float)"required>
+                </div>
+
+                <div class="form-group">
+                    <label for="x">x:</label>
+                    <input type="float" id="x" name="x" pattern="-?\d+(\.\d+)?" placeholder="Enter x value (float)"required>
+                </div>
+
+                <div class="form-group">
+                    <label for="y">y:</label>
+                    <input type="text" id="y" name="y" pattern="-?\d+(\.\d+)?" placeholder="Enter y value (float)"required>
+                </div>
+
+                <div class="form-group">
+                    <label for="z">z:</label>
+                    <input type="text" id="z" name="z" pattern="-?\d+(\.\d+)?" placeholder="Enter z value (float)"required>
+                </div>
+
+                <div class="form-group">
+                    <label for="cut">Cut:</label>
+                    <select id="cut" name="cut">
+                        <option value="Fair">Fair</option>
+                        <option value="Good">Good</option>
+                        <option value="Very Good">Very Good</option>
+                        <option value="Premium">Premium</option>
+                        <option value="Ideal">Ideal</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="color">Color:</label>
+                    <select id="color" name="color">
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+                        <option value="G">G</option>
+                        <option value="H">H</option>
+                        <option value="I">I</option>
+                        <option value="J">J</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="clarity">Clarity:</label>
+                    <select id="clarity" name="clarity">
+                        <option value="I1">I1</option>
+                        <option value="SI2">SI2</option>
+                        <option value="SI1">SI1</option>
+                        <option value="VS2">VS2</option>
+                        <option value="VS1">VS1</option>
+                        <option value="VVS2">VVS2</option>
+                        <option value="VVS1">VVS1</option>
+                        <option value="IF">IF</option>
+                    </select>
+                </div>
+
+                <input type="submit" value="Submit">
+            </form>
+
+            <h3> Below the scale is provided based on which the Diamond's pricing is done. The value of the Diamond increases down the scale.</h3>
+
+            <h4>Some Abbreviations</h4>
+
+              <p><strong>I1</strong>- Included,
+                <strong>SI2</strong>- Slightly Included 2, 
+                <strong>SI1</strong>- Slightly Included 1,
+                <strong>VS2</strong>- Very Slightly Included 2,
+                <strong>VS1</strong>- Very Slightly Included 1,
+                <strong>VVS2</strong>- Very Very Slightly Included 2,
+                <strong>VVS1</strong>- Very Very Slightly Included 1,
+                <strong>IF</strong>- Flawless
+            </p>
+
+            <div class="details-section">
+                <div class="row">
+                    <div class="box">
+                        <h3>Color</h3>
+                        <div class="details-list">
+                        <p>D: 1</p>
+                        <p>E: 2</p>
+                        <p>F: 3</p>
+                        <p>G: 4</p>
+                        <p>H: 5</p>
+                        <p>I: 6</p>
+                        <p>J: 7</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <h3>Clarity</h3>
+                        <div class="details-list">
+                            <p>I1: 1</p>
+                            <p>SI2: 2</p>
+                            <p>SI1: 3</p>
+                            <p>VS2: 4</p>
+                            <p>VS1: 5</p>
+                            <p>VVS2: 6</p>
+                            <p>VVS1: 7</p>
+                            <p>IF: 8</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="middle-box">
+                    <h3>Cut</h3>
+                    <div class="details-list">
+                        <p>Fair: 1</p>
+                        <p>Good: 2</p>
+                        <p>Very Good: 3</p>
+                        <p>Premium: 4</p>
+                        <p>Ideal: 5</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Diamond Price Prediction. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuIcon = document.getElementById('menu-icon');
+            const navList = document.getElementById('nav-list');
+
+            menuIcon.addEventListener('click', function () {
+                navList.classList.toggle('show');
+            });
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
